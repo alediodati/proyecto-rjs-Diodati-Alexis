@@ -1,0 +1,38 @@
+export let products = [
+  {
+    id: "1",
+    title: "Camiseta Seleccion Argentina",
+    price: 70500,
+    description: "Camiseta Titular Argentina 2024",
+    stock: 17,
+    category: "selecciones",
+    imageUrl: "",
+  },
+  {
+    id: "2",
+    title: "Camiseta Boca Juniors",
+    price: 55500,
+    stock: 17,
+    description: "Camiseta Titular Boca Juniors Temporada 2024",
+    category: "Futbol Local",
+    imageUrl: "",
+  },
+  {
+    id: "3",
+    title: "Camiseta Fc Barcelona",
+    price: 88000,
+    stock: 17,
+    description: "Camiseta Titular Fc Barcelona Temporada 2024 ",
+    category: "Futbol Europeo",
+    imageUrl: "",
+  },
+  {
+    id: "4",
+    title: "Camiseta Retro Argentina",
+    price: 108800,
+    stock: 17,
+    description: "Camiseta Titular Argentina Mundial 2006",
+    category: "Retro",
+    imageUrl: "",
+  },
+];

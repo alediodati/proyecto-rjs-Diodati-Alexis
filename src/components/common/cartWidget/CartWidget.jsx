@@ -1,10 +1,11 @@
 import { FaShoppingCart } from "react-icons/fa";
-const CartWidget = () => {
+import { Link } from "react-router-dom";
+import "./cartWidget.css";
+export const CartWidget = () => {
   return (
-    <div>
+    <Link to="/cart">
       <FaShoppingCart />
-      <span>27</span>
-    </div>
+      <span>5</span>
+    </Link>
   );
 };
-export default CartWidget;
