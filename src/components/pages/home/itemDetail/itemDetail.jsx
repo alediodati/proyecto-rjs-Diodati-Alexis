@@ -1,4 +1,4 @@
-import Counter from "../../common/counter/Counter";
+import Counter from "../../../common/counter/Counter";
 
 const ItemDetail = ({ item, agregarAlCarrito }) => {
   return (

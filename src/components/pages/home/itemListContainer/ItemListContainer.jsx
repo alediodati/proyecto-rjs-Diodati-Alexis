@@ -1,12 +1,10 @@
-import { useState } from "react";
-import { useEffect } from "react";
-import { products } from "../../../products";
-import ItemList from "./ItemList";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { products } from "../../../../product";
+import ItemList from "./ItemList";
 
-export const ItemListContainer = () => {
+const ItemListContainer = () => {
   const { name } = useParams();
-
   const [items, setItems] = useState([]);
 
   useEffect(() => {
@@ -14,7 +12,7 @@ export const ItemListContainer = () => {
       (producto) => producto.category === name
     );
     const getProducts = new Promise((resolve) => {
-      resolve(name ? unaFraccion : products);
+      resolve(name !== "Todas" ? unaFraccion : products);
     });
     getProducts.then((res) => {
       setItems(res);
@@ -22,3 +20,5 @@ export const ItemListContainer = () => {
   }, [name]);
   return <ItemList items={items} />;
 };
+
+export default ItemListContainer;

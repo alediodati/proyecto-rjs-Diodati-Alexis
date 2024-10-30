@@ -8,11 +8,12 @@ import Menu from "@mui/material/Menu";
 
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
-import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 
 import CartWidget from "../common/cartWidget/CartWidget";
 import { FaAccessibleIcon, FaAlignJustify } from "react-icons/fa";
+import { Link } from "react-router-dom";
+
 const pages = [
   "Todas",
   "Selecciones",
@@ -110,19 +111,19 @@ function Navbar() {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
-              >
-                {page}
-              </Button>
+              <Link key={page} to={`/category/${page}`}>
+                <Button
+                  key={page}
+                  onClick={handleCloseNavMenu}
+                  sx={{ my: 2, color: "white", display: "block" }}
+                >
+                  {page}
+                </Button>
+              </Link>
             ))}
           </Box>
           <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <CartWidget />
-            </Tooltip>
+            <CartWidget />
           </Box>
         </Toolbar>
       </Container>

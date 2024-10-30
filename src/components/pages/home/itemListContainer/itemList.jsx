@@ -1,4 +1,4 @@
-import { Card } from "../../common/card/Card";
+import Card from "../../../common/card/Card";
 
 const ItemList = ({ items }) => {
   return (
@@ -7,7 +7,8 @@ const ItemList = ({ items }) => {
       <div
         style={{
           display: "flex",
-          justifyContent: "space-around",
+          justifyContent: "center",
+          alignContent: "center",
           flexWrap: "wrap",
           width: "100%",
         }}
@@ -28,5 +29,3 @@ const ItemList = ({ items }) => {
 };
 
 export default ItemList;
-
-};
