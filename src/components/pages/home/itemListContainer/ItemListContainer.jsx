@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import ItemList from "./ItemList";
 import { db } from "../../../../firebaseConfig";
 import { collection, getDocs, query, where, addDoc } from "firebase/firestore";
-import { products } from "../../../../product";
 
 const ItemListContainer = () => {
   const { name } = useParams();
@@ -13,7 +12,7 @@ const ItemListContainer = () => {
     const productsCollection = collection(db, "products");
     let docsRef = productsCollection;
 
-    if (name) {
+    if (name && name != "Todas") {
       docsRef = query(productsCollection, where("category", "==", name));
     }
 
@@ -28,18 +27,18 @@ const ItemListContainer = () => {
         console.error("Error fetching data:", error);
       });
   }, [name]);
-  const funcionParaAgregar = () => {
-    const productsCollection = collection(db, "products");
+  // const funcionParaAgregar = () => {
+  //   const productsCollection = collection(db, "products");
 
-    products.forEach((product) => {
-      addDoc(productsCollection, product);
-    });
-  };
+  //   products.forEach((product) => {
+  //     addDoc(productsCollection, product);
+  //   });
+  // };
 
   return (
     <div>
       <ItemList items={items} />
-      <button onClick={funcionParaAgregar}>Cargar products</button>
+      {/* <button onClick={funcionParaAgregar}>Cargar products</button> */}
     </div>
   );
 };
