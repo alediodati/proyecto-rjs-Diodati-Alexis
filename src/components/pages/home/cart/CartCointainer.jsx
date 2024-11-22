@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../../../contex/cartContext";
+import "./cartCointainer.css";
 
 const CartContainer = () => {
   const { cart, resetCart, removeById, getTotalAmount } =
@@ -9,18 +10,10 @@ const CartContainer = () => {
   let totalEnElCarrito = getTotalAmount();
 
   return (
-    <div>
+    <div className="cart-container">
       {cart.map((product) => {
         return (
-          <div
-            key={product.id}
-            style={{
-              border: "2px solid black",
-              width: "300px",
-              marginBottom: "10px",
-              padding: "10px",
-            }}
-          >
+          <div className="cart-item" key={product.id}>
             <h2>{product.title}</h2>
             <h3>Cantidad: {product.quantity}</h3>
             <button onClick={() => removeById(product.id)}>Eliminar</button>
@@ -28,14 +21,18 @@ const CartContainer = () => {
         );
       })}
 
-      {cart.length > 0 && <button onClick={resetCart}>Limpiar carrito</button>}
+      {cart.length > 0 && (
+        <button className="reset-cart-button" onClick={resetCart}>
+          Vaciar carrito
+        </button>
+      )}
 
-      <h2 style={{ color: cart.length > 0 ? "red" : "blue" }}>
+      <h2 className={`cart-total ${cart.length > 0 ? "red" : "blue"}`}>
         El total a pagar es {totalEnElCarrito}
       </h2>
 
-      <Link to="/checkout" style={{ color: "black" }}>
-        <button>Finalizar compra</button>
+      <Link to="/checkout">
+        <button className="checkout-button">Finalizar compra</button>
       </Link>
     </div>
   );

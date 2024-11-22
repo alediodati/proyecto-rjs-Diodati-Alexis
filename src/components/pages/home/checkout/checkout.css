@@ -1,0 +1,77 @@
+/* Contenedor principal del formulario */
+.checkout-container {
+  padding: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para los inputs */
+.checkout-container input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.checkout-container input:focus {
+  border-color: #4caf50;
+  outline: none;
+}
+
+/* Estilo para los botones */
+.checkout-container button {
+  width: calc(50% - 5px);
+  padding: 10px;
+  margin-right: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.checkout-container button:last-child {
+  margin-right: 0;
+}
+
+/* Botón para comprar */
+.checkout-container button[type="submit"] {
+  background-color: #4caf50;
+  color: white;
+}
+
+.checkout-container button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+/* Botón para cancelar */
+.checkout-container button[type="button"] {
+  background-color: #ff5e5e;
+  color: white;
+}
+
+.checkout-container button[type="button"]:hover {
+  background-color: #e04c4c;
+}
+
+/* Estilo para el mensaje del ticket */
+.checkout-message {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-top: 20px;
+  background-color: #e7ffe7;
+  padding: 15px;
+  border: 1px solid #4caf50;
+  border-radius: 5px;
+}

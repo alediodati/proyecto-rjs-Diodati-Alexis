@@ -1,0 +1,43 @@
+/* Contenedor principal */
+.item-detail-container {
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Estilo para el título */
+.item-detail-container h2:first-of-type {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* Estilo para la descripción */
+.item-detail-container h2:last-of-type {
+  font-size: 18px;
+  font-weight: normal;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+/* Estilo para la imagen */
+.item-detail-container img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+}
+
+/* Contenedor del Counter */
+.counter-container {
+  margin-top: 20px;
+}
